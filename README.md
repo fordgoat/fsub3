@@ -1,4 +1,4 @@
-# ♻️File-Sharing♻️
+# File-Sharing
 
 Bot Telegram untuk menyimpan Posting atau File yang dapat Diakses melalui Link Khusus.
 
