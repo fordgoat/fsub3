@@ -1,5 +1,5 @@
 # (©)Codexbotz
-# Recode By Dappa @mahadappa
+# Recode @mahadappa
 # Kalo clone Gak usah hapus ya kontol
 
 
@@ -12,7 +12,7 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from bot import Bot
-from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, START_MSG
+from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, PROTECT_CONTENT, START_MSG
 from database.sql import add_user, full_userbase, query_msg
 from helper_func import decode, get_messages, subscribed
 
@@ -116,11 +116,11 @@ async def start_command(client: Client, message: Message):
                 pass
     else:
         buttons = [
-            [InlineKeyboardButton("• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about")], 
-            [
-                InlineKeyboardButton("•ᴛᴜᴛᴜᴘ•", callback_data="close"),
-            ],
-        ]
+                [
+                    InlineKeyboardButton("ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ", callback_data = "about"),
+                    InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data = "close")
+                ]
+            ]
         await message.reply_text(
             text=START_MSG.format(
                 first=message.from_user.first_name,
@@ -149,7 +149,7 @@ async def not_joined(client: Client, message: Message):
             InlineKeyboardButton("•ᴄʜᴀɴᴇʟ•", url=client.invitelink2),
         ],
         [
-            InlineKeyboardButton("•ᴄʜᴀɴᴇʟ•", url=client.invitelink3), 
+            InlineKeyboardButton("•ᴄʜᴀɴᴇʟ•", url=client.invitelink3),
         ],
     ]
     try:
