@@ -1,6 +1,8 @@
 # (©)Codexbotz
-# Recode @mahadappa
-# Kalo clone Gak usah hapus ya kontol
+# Recode By Zaen @Mafia_Tobatz
+# Recode By Dappa @mahadappa
+# Kalo clone Gak usah hapus 
+# gue tandain akun tele nya ngentod
 
 
 import asyncio
@@ -12,7 +14,7 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from bot import Bot
-from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, PROTECT_CONTENT, START_MSG
+from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, START_MSG, PROTECT_CONTENT
 from database.sql import add_user, full_userbase, query_msg
 from helper_func import decode, get_messages, subscribed
 
@@ -39,9 +41,14 @@ async def _human_time_duration(seconds):
 
 
 @Bot.on_message(filters.command("start") & filters.private & subscribed)
-async def start_command(client: Client, message: Message):
+async def start_command(client: Bot, message: Message):
     id = message.from_user.id
-    user_name = "@" + message.from_user.username if message.from_user.username else None
+    user_name = (
+        f"@{message.from_user.username}"
+        if message.from_user.username
+        else None
+    )
+
     try:
         await add_user(id, user_name)
     except:
@@ -79,7 +86,7 @@ async def start_command(client: Client, message: Message):
         try:
             messages = await get_messages(client, ids)
         except BaseException:
-            await message.reply_text("<b>Telah Terjadi Error </b>🥴")
+            await message.reply_text("<b>Telah Terjadi Error </b>🥺")
             return
         await temp_msg.delete()
 
@@ -87,11 +94,12 @@ async def start_command(client: Client, message: Message):
 
             if bool(CUSTOM_CAPTION) & bool(msg.document):
                 caption = CUSTOM_CAPTION.format(
-                    previouscaption="" if not msg.caption else msg.caption.html,
+                    previouscaption=msg.caption.html if msg.caption else "",
                     filename=msg.document.file_name,
                 )
+
             else:
-                caption = "" if not msg.caption else msg.caption.html
+                caption = msg.caption.html if msg.caption else ""
 
             reply_markup = msg.reply_markup if DISABLE_CHANNEL_BUTTON else None
             try:
@@ -117,7 +125,7 @@ async def start_command(client: Client, message: Message):
     else:
         buttons = [
                 [
-                    InlineKeyboardButton("ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ", callback_data = "about"),
+                    InlineKeyboardButton("Cara Penggunaan", callback_data = "help"),
                     InlineKeyboardButton("ᴄʟᴏsᴇ", callback_data = "close")
                 ]
             ]
