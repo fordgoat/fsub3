@@ -5,6 +5,8 @@
 
 import logging
 import os
+from distutils.util import strtobool
+from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 
 # Bot token dari @Botfather
@@ -23,7 +25,7 @@ CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 
 # Protect Content
-PROTECT_CONTENT = os.environ.get("PROTECT_CONTENT", "False")
+PROTECT_CONTENT = os.environ.get("PROTECT_CONTENT", "True")
 
 
 # NAMA OWNER
