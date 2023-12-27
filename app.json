@@ -1,13 +1,15 @@
 {
-  "name": "ReyyFileSharing3",
+  "name": "ReaFsub4",
   "description": "BOT Multi Force Subs File Sharing Bot berguna untuk menyimpan file dan dapat diakses melalui link khusus",
   "keywords": [
     "telegram",
     "file",
+    "reasupport",
+    "reafsub",
     "sharing"
   ],
-  "repository": "https://github.com/ReyyNada/ReyyFileSharing3",
-  "logo": "https://telegra.ph/file/4541a63f5fbb976dd7313.jpg",
+  "repository": "https://github.com/reasupport/4tombol",
+  "logo": "https://rea.my.id/img/logohd.jpg",
   "env": {
     "TG_BOT_TOKEN": {
       "description": "Masukan Bot token, Dapatkan dari t.me/BotFather",
@@ -36,10 +38,6 @@
     "CHANNEL_ID": {
       "description": "Masukan ID Channel Untuk [Channel Database]",
       "value": "-100"
-    },
-    "PROTECT_CONTENT": {
-      "description": "Untuk Mencegah pengguna bot untuk mendownload/memforward/mengscreenshot konten yang dikirim di bot [ Bila ingin diaktifkan ubah ke True ]",
-      "value": "False"
     },
     "FORCE_SUB_CHANNEL1": {
       "description": "Masukan ID dari Channel Atau Group Untuk Wajib Subscribenya",
