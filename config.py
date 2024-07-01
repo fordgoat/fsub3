@@ -10,22 +10,22 @@ from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 
 # Bot token dari @Botfather
-TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "")
+TG_BOT_TOKEN = os.environ.get("TG_BOT_TOKEN", "7280404452:AAHcCyl1m9Dm9MmLuwzavmxV67xSvKd9_2o")
 
 # API ID Anda dari my.telegram.org
-APP_ID = int(os.environ.get("APP_ID", ""))
+APP_ID = int(os.environ.get("APP_ID", "29486311"))
 
 # API Hash Anda dari my.telegram.org
-API_HASH = os.environ.get("API_HASH", "")
+API_HASH = os.environ.get("API_HASH", "ffdc688dc4eee8d2585cb24155188432")
 
 # ID Channel Database
-CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
+CHANNEL_ID = int(os.environ.get("CHANNEL_ID", "-1001950756152"))
 
 # OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", ""))
+OWNER_ID = int(os.environ.get("OWNER_ID", "1707380693"))
 
 # NAMA OWNER
-OWNER = os.environ.get("OWNER", "@SayaKyu")
+OWNER = os.environ.get("OWNER", "@hornierthanurex")
 
 PROTECT_CONTENT = strtobool(os.environ.get("PROTECT_CONTENT", "True"))
 
@@ -37,16 +37,16 @@ UPSTREAM_BRANCH = os.environ.get("UPSTREAM_BRANCH", "master")
 
 
 # Database
-DB_URI = os.environ.get("DATABASE_URL", "")
+DB_URI = os.environ.get("DATABASE_URL", "postgres://bmmrbtgd:C3aLXivbK9ZomPRSJ-0RU_p37CWfIMOl@raja.db.elephantsql.com/bmmrbtgd")
 
 # Username CH & Group
-CHANNEL = os.environ.get("CHANNEL", "ReaSupport")
-GROUP = os.environ.get("GROUP", "Slut_ID")
+CHANNEL = os.environ.get("CHANNEL", "hornierthanurex")
+GROUP = os.environ.get("GROUP", "L4STHOPES")
 
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
-FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", "0"))
-FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "0"))
-FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL3", "0"))
+FORCE_SUB_CHANNEL1 = int(os.environ.get("FORCE_SUB_CHANNEL1", "-1002087078793"))
+FORCE_SUB_CHANNEL2 = int(os.environ.get("FORCE_SUB_CHANNEL2", "-1001710331413"))
+FORCE_SUB_CHANNEL3 = int(os.environ.get("FORCE_SUB_CHANNEL3", "-1001955926976"))
 
 TG_BOT_WORKERS = int(os.environ.get("TG_BOT_WORKERS", "4"))
 
@@ -56,7 +56,7 @@ START_MSG = os.environ.get(
     "<b>Hello {first}</b>\n\n<b>Saya dapat menyimpan file pribadi di Channel Tertentu dan pengguna lain dapat mengaksesnya dari link khusus.</b>",
 )
 try:
-    ADMINS = [int(x) for x in (os.environ.get("ADMINS", "").split())]
+    ADMINS = [int(x) for x in (os.environ.get("ADMINS", "1707380693").split())]
 except ValueError:
     raise Exception("Daftar Admin Anda tidak berisi User ID Telegram yang valid.")
 
@@ -73,7 +73,7 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == "True"
 
 ADMINS.append(OWNER_ID)
-ADMINS.append(6109394253)
+ADMINS.append(1707380693)
 
 
 LOG_FILE_NAME = "filesharingbot.txt"
